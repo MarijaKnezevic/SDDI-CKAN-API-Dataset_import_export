@@ -4,10 +4,10 @@ Python scripts for importing and exporting ckan datasets.
 
 ## Functionality
 
-### CKAN API Export Overview
+### CKAN API Export Scrypt Functionality
 By running the python scrypts the CKAN datasets will be exported localy in `json` format. 
 
-#### Description
+#### Description of the CKAN API Scrypt Export Functionality
 
 In the file `ckan_API_export.py`, is required to address the CKAN Instance where dataset are hosted. This parameter is in [ckan_API_export.py](https://github.com/MarijaKnezevic/CKAN-API-export/blob/main/ckan_API_export.py) scrypt defined as `url` 
 
@@ -34,5 +34,5 @@ In the following image is possible to see the folder `export` with few exported 
 ![image](https://github.com/MarijaKnezevic/CKAN-API-export/assets/93824048/2ab39f31-2840-4f34-b499-95f67596c82a)
 
 
-### CKAN API Import
-#### Description
+### CKAN API Import Scrypt Functionality
+#### Description of the CKAN API Scrypt Import Functionality
