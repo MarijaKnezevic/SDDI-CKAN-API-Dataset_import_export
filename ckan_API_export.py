@@ -4,7 +4,7 @@ import json
 import re
 
 # CKAN API endpoint for searching datasets (here you need to add from which catalog you want to export dataset)
-url = 'https://localhost:5000/api/3/action/package_search'
+url = 'http://localhost:5000/api/3/action/package_search'
 
 # Prompt the user if they want to export all datasets
 export_all = input("Do you want to export all datasets? (yes/no): ").lower() == 'yes'
