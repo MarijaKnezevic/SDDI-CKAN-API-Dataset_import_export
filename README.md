@@ -1,10 +1,12 @@
-# CKAN-API-export
-Python scripts for exporting ckan datasets
+# CKAN-API-Dataset_export
+Python scripts for exporting ckan datasets.
 This repository contains python scripts which needs to be run localy. By running the scrypts the CKAN datasets will be exported localy i `json` format.
+The script accesses datasets from a [CKAN](https://ckan.org/) catalog using the [CKAN API](https://docs.ckan.org/en/2.9/api/). 
 
 ## Description
 
-In the file `ckan_API_export.py`, `url` addresses from the catalog from which the catalog entries are to be exported must be defined as on the following example: `url = 'https://localhost:5000/api/3/action/package_search'`
+In the file `ckan_API_export.py`, is required to address the CKAN Instance where dataset are hosted. This parameter is in [ckan_API_export.py](https://github.com/MarijaKnezevic/CKAN-API-export/blob/main/ckan_API_export.py) scrypt defined as `url` 
+Example: `url = 'https://localhost:5000/api/3/action/package_search'`
 
 The results will be exported to a separate folder (name of the folder `export`) and the names of the individual data sets will be set as `Title` in the catalog.
 
