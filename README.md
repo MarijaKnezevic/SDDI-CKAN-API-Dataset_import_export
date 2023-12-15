@@ -8,7 +8,6 @@ The script accesses datasets from a [CKAN](https://ckan.org/) catalog using the 
 In the file `ckan_API_export.py`, is required to address the CKAN Instance where dataset are hosted. This parameter is in [ckan_API_export.py](https://github.com/MarijaKnezevic/CKAN-API-export/blob/main/ckan_API_export.py) scrypt defined as `url` 
 
 Example:
-
 `url = 'https://localhost:5000/api/3/action/package_search'`
 
 The results will be exported to a separate folder (name of the folder `export`) and the names of the individual data sets will be set as `Title` in the catalog.
