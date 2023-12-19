@@ -32,7 +32,7 @@ In the prompt, it is possible to select the export of the data set as separate j
 
 
 ### How to export specific number of datasets
-If not all data sets needs to be exported, the user needs to give the number of datasets that needs to be exported
+If not all data sets needs to be exported, the user needs to give the number of datasets that needs to be exported. It will be exported the lates updated/created datasets.
 
 
 Here is an example of the tool's dialog:
