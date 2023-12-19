@@ -30,7 +30,7 @@ if export_choice == 'number':
 selected_datasets = []
 if export_choice == 'specific':
     print("Fetching datasets for selection...")
-    response = requests.get(url, params={'q': '*:*', 'start': 0, 'rows': 10})
+    response = requests.get(url, params={'q': '*:*', 'start': 0, 'rows': 1000})
     if response.status_code == 200:
         datasets = response.json().get('result', {}).get('results', [])
         if not datasets:
@@ -62,7 +62,7 @@ os.makedirs(export_folder, exist_ok=True)
 params = {
     'q': '*:*',  # Search query to retrieve all datasets
     'start': 0,
-    'rows': 10,  # Number of datasets to retrieve per request (adjust as needed)
+    'rows': 1000,  # Adjust the number to a sufficiently large value to retrieve all datasets in a single request
 }
 
 def clean_filename(filename):
