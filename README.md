@@ -53,7 +53,7 @@ In the prompt is possible to export defined number of the dataset as one json fi
 In the prompt for exporting *specific* datasets, the user can select which dataset to export. The dialog lists the datasets available in the catalog and the user has to enter the index of the datasets that he wants to export.
 
 In the following image is shown the example from prompt:
-![image](https://github.com/MarijaKnezevic/CKAN-API-Dataset_import_export/assets/93824048/d32e3f31-6f76-4b89-835d-50d7aea9073e)
+![image](https://github.com/MarijaKnezevic/CKAN-API-Dataset_import_export/assets/93824048/def470cb-76e8-4cb2-9908-38d5349fa5bc)
 
 The name of the data set is the title defined in the catalog as well as the date and time of the export.
 In the prompt, it is possible to export selected datasets either as separate files or as a one json file.
