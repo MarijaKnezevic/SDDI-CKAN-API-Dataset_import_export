@@ -13,9 +13,9 @@ By running scrypt, the user is asked to enter the URL page of the catalog from w
 
 When the code is executed, the user will be asked whether all datasets should be exported.
 There are three options: 
-- to export *all* datasets
-- to specify the *number* of datasets which should be exported
-- to select *specific* dataset which should be exported.
+- to export ***all*** datasets
+- to specify the ***number*** of datasets which should be exported
+- to select ***specific*** dataset which should be exported.
 
 The selected datasets can be exported as a single json file or separately for each dataset. The results will be exported to a separate folder (name of the folder `export`).
 
@@ -61,3 +61,27 @@ In the prompt, it is possible to export selected datasets either as separate fil
 ### CKAN API Import Scrypt Functionality
 #### Description of the CKAN API Scrypt Import Functionality
 *this chapter needs to be updated*
+
+
+## How to run the script
+To run the script the installed [Python](https://www.python.org/downloads/) is required.
+
+For an example, on a Windows you can use the Command Prompt or PowerShell and on macOS or Linux you can open Terminal.
+
+1. ***Clone the Repository*** : navigate to folder on your local machine where you will store the scrypts and Clone the GitHub repository
+
+   `git clone https://github.com/MarijaKnezevic/CKAN-API-Dataset_import_export.git`
+   
+3. ***Navigate to the Project Directory***
+4.  ***Run the Script*** : Run the script by executing the following command
+
+    `python ckan_API_export.py`
+5. ***Follow the Prompts*** : Enter the required information and follow the instructions provided by the script.
+6. ***View Output*** : The script will generate output based on your input. The `export` file is going to be stored where your cloned repository is.
+
+In the following image, you can see the steps executed in Windows PowerShell:
+
+![image](https://github.com/MarijaKnezevic/CKAN-API-Dataset_import_export/assets/93824048/b29b8a76-ab90-4a60-a211-2aec859aa99c)
+
+
+
