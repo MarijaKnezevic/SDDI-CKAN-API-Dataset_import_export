@@ -1,3 +1,5 @@
+# work in progress
+
 # CKAN-API-Dataset Import
 The script accesses datasets from a [CKAN](https://ckan.org/) catalog using the [CKAN API](https://docs.ckan.org/en/2.9/api/). 
 Python scripts for importing CKAN datasets.
