@@ -1,0 +1,96 @@
+{
+  "author": "[{\"author_email\": \"\", \"author_name\": \"Marija\"}]",
+  "author_email": null,
+  "creator_user_id": "60cc5c19-1462-4812-8c03-19c6770626cd",
+  "id": "14699449-4aca-4bcd-8a51-700c932ed50e",
+  "isopen": false,
+  "language": "",
+  "licence_agreement": [
+    "licence_agreement_check"
+  ],
+  "license_id": "notspecified",
+  "license_title": "License Not Specified",
+  "maintainer": "[]",
+  "maintainer_email": null,
+  "metadata_created": "2025-06-26T08:20:06.521082",
+  "metadata_modified": "2025-06-26T08:20:39.579058",
+  "name": "test-flughafen-kml",
+  "notes": "test-flughafen-kml",
+  "num_resources": 1,
+  "num_tags": 1,
+  "organization": {
+    "id": "ec9aa965-a755-414a-83cb-ec2ae7febbe3",
+    "name": "lehrstuhl-fur-geoinformatik",
+    "title": "Lehrstuhl f\u00fcr Geoinformatik",
+    "type": "organization",
+    "description": "",
+    "image_url": "http://localhost:5000/base/images/organisation_icons/gis_logo.png",
+    "created": "2025-05-13T10:13:57.162011",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active"
+  },
+  "owner_org": "ec9aa965-a755-414a-83cb-ec2ae7febbe3",
+  "private": false,
+  "spatial": "",
+  "state": "active",
+  "title": "test-flughafen-kml",
+  "type": "dataset",
+  "url": null,
+  "version": "",
+  "groups": [
+    {
+      "description": "",
+      "display_name": "Datensatz und Dokumente",
+      "id": "52ad242c-5493-4288-b9e3-f7122782b580",
+      "image_display_url": "http://localhost:5000/base/images/group_icons/dataset.jpg",
+      "name": "dataset",
+      "title": "Datensatz und Dokumente"
+    }
+  ],
+  "resources": [
+    {
+      "allowed_users": "",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2025-06-26T08:20:38.734373",
+      "datastore_active": false,
+      "description": "",
+      "format": "KML",
+      "hash": "",
+      "id": "dab7ec37-ed6b-4425-ba8c-1684eee625c8",
+      "last_modified": "2025-06-26T08:20:38.648447",
+      "metadata_modified": "2025-06-26T08:20:39.598213",
+      "mimetype": "application/vnd.google-earth.kml+xml",
+      "mimetype_inner": null,
+      "name": "flughafen.kml",
+      "package_id": "14699449-4aca-4bcd-8a51-700c932ed50e",
+      "position": 0,
+      "resource_type": null,
+      "restricted_level": "public",
+      "size": 1682,
+      "state": "active",
+      "tracking_summary": {
+        "total": 0,
+        "recent": 0
+      },
+      "url": "http://localhost:5000/dataset/14699449-4aca-4bcd-8a51-700c932ed50e/resource/dab7ec37-ed6b-4425-ba8c-1684eee625c8/download/flughafen.kml",
+      "url_type": "upload"
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "test",
+      "id": "474e5bf5-c0f5-42f2-9b79-aa9650bb1d6b",
+      "name": "test",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "tracking_summary": {
+    "total": 0,
+    "recent": 0
+  }
+}

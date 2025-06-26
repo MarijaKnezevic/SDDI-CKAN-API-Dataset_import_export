@@ -1,0 +1,96 @@
+{
+  "author": "[]",
+  "author_email": null,
+  "creator_user_id": "60cc5c19-1462-4812-8c03-19c6770626cd",
+  "id": "831a752b-9af1-4c12-9600-8502b2ce7b16",
+  "isopen": false,
+  "language": "",
+  "licence_agreement": [
+    "licence_agreement_check"
+  ],
+  "license_id": "notspecified",
+  "license_title": "License Not Specified",
+  "maintainer": "[]",
+  "maintainer_email": null,
+  "metadata_created": "2025-05-13T08:15:23.613289",
+  "metadata_modified": "2025-05-13T08:15:27.687227",
+  "name": "34",
+  "notes": "34",
+  "num_resources": 1,
+  "num_tags": 1,
+  "organization": {
+    "id": "a57161c1-2c06-4c19-a9dd-601f0c75ad0b",
+    "name": "bayerische-landesanstalt-wald-forstwirtschaft",
+    "title": "Bayerische Landesanstalt f\u00fcr Wald und Forstwirtschaft (LWF)",
+    "type": "organization",
+    "description": "",
+    "image_url": "http://localhost:5000/base/images/organisation_icons/logo-lwf.png",
+    "created": "2025-05-13T10:13:57.502604",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active"
+  },
+  "owner_org": "a57161c1-2c06-4c19-a9dd-601f0c75ad0b",
+  "private": false,
+  "spatial": "",
+  "state": "active",
+  "title": "34",
+  "type": "dataset",
+  "url": null,
+  "version": "",
+  "groups": [
+    {
+      "description": "",
+      "display_name": "Datensatz und Dokumente",
+      "id": "52ad242c-5493-4288-b9e3-f7122782b580",
+      "image_display_url": "http://localhost:5000/base/images/group_icons/dataset.jpg",
+      "name": "dataset",
+      "title": "Datensatz und Dokumente"
+    }
+  ],
+  "resources": [
+    {
+      "allowed_users": "",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2025-05-13T08:15:27.468290",
+      "datastore_active": false,
+      "description": "",
+      "format": "",
+      "hash": "",
+      "id": "7fc24de3-9bc4-4041-b487-5faa2a924e1c",
+      "last_modified": null,
+      "metadata_modified": "2025-05-13T08:15:27.692659",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "",
+      "package_id": "831a752b-9af1-4c12-9600-8502b2ce7b16",
+      "position": 0,
+      "resource_type": null,
+      "restricted_level": "public",
+      "size": null,
+      "state": "active",
+      "tracking_summary": {
+        "total": 0,
+        "recent": 0
+      },
+      "url": "",
+      "url_type": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "34",
+      "id": "d7363a9d-df21-4f02-b7af-1e814fbc82dd",
+      "name": "34",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "tracking_summary": {
+    "total": 0,
+    "recent": 0
+  }
+}
