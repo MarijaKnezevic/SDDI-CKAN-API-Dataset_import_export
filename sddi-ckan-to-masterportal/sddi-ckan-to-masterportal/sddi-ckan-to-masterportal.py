@@ -140,19 +140,24 @@ def main():
     print(f"\n🎉 Done! Exported {datasets_exported} dataset(s) to folder: {export_folder}/")
 
     # === Select files to import ===
-    print("\n📥 Select files to import into Masterportal:")
-    config_files = [f for f in os.listdir(export_folder) if f.endswith("-config.json")]
-    if not config_files:
-        print("❌ No '*-config.json' files found in the export folder.")
-        return
+    print("\n📥 Select datasets to import into Masterportal:")
+    all_files = os.listdir(export_folder)
+    base_names = set()
 
-    for i, fname in enumerate(config_files, 1):
-        print(f"{i}. {fname}")
+    for f in all_files:
+        if f.endswith("-config.json") or f.endswith("-service.json"):
+            base = f.replace("-config.json", "").replace("-service.json", "")
+            base_names.add(base)
+
+    base_names = sorted(base_names)
+
+    for i, name in enumerate(base_names, 1):
+        print(f"{i}. {name}")
 
     try:
-        indices = input("\nEnter the numbers of config files to import (comma-separated): ")
+        indices = input("\nEnter the numbers of datasets to import (comma-separated): ")
         selected_indices = [int(i.strip()) - 1 for i in indices.split(',')]
-        selected_files = [config_files[i] for i in selected_indices if 0 <= i < len(config_files)]
+        selected_base_names = [base_names[i] for i in selected_indices if 0 <= i < len(base_names)]
     except Exception as e:
         print(f"❌ Invalid selection: {e}")
         return
@@ -179,8 +184,8 @@ def main():
     # === Import selected files ===
     print("\n🛠️ Importing into Masterportal...")
 
-    for config_fname in selected_files:
-        base_name = config_fname.replace("-config.json", "")
+    for base_name in selected_base_names:
+        config_fname = f"{base_name}-config.json"
         service_fname = f"{base_name}-service.json"
 
         config_path = os.path.join(export_folder, config_fname)
