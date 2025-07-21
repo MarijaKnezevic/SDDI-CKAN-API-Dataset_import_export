@@ -1,0 +1,224 @@
+{
+  "portalConfig": {
+    "map": {
+      "controls": {
+        "zoom": true,
+        "orientation": {
+          "zoomMode": "once"
+        }
+      },
+      "mapView": {
+        "backgroundImage": "./resources/img/backgroundCanvas.jpeg",
+        "startCenter": [690000, 5330000],
+        "extent": [660000, 5305000, 720000, 5350000],
+        "startZoomLevel": 8
+      }
+    },
+    "portalFooter": {
+      "urls": [
+        {
+          "bezeichnung": "common:modules.portalFooter.designation",
+          "url": "https://geoinfo.hamburg.de/",
+          "alias": "Landesbetrieb Geoinformation und Vermessung",
+          "alias_mobile": "LGV"
+        }
+      ]
+    },
+    "tree": {
+      "highlightedFeatures": {
+        "active": true
+      }
+    },
+    "mainMenu": {
+      "expanded": true,
+      "title": {
+        "text": "Basic",
+        "logo": "./resources/img/mp_logo.png",
+        "link": "https://masterportal.org",
+        "toolTip": "Masterportal"
+      },
+      "searchBar": {
+        "searchInterfaces": [
+          {
+            "type": "komootPhoton",
+            "minChars": 3,
+            "serviceId": "11",
+            "limit": 10,
+            "lang": "de",
+            "lat": 53.6,
+            "lon": 10.0,
+            "bbox": "9.6,53.3,10.4,53.8"
+          },
+          {
+            "type": "visibleVector",
+            "resultEvents": {
+              "onClick": [
+                "openGetFeatureInfo",
+                "setMarker",
+                "zoomToResult"
+              ],
+              "onHover": [
+                "setMarker"
+              ]
+            }
+          },
+          {
+            "type": "topicTree",
+            "hitTemplate": "layer"
+          }
+        ]
+      },
+      "sections": [
+        [
+          {
+            "type": "fileImport"
+          },
+          {
+            "type": "openConfig"
+          },
+          {
+            "type": "contact",
+            "serviceId": "80001",
+            "includeSystemInfo": true,
+            "from": [
+              {
+                "email": "lgvgeoportal-hilfe@gv.hamburg.de",
+                "name": "LGVGeoportalHilfe"
+              }
+            ],
+            "to": [
+              {
+                "email": "lgvgeoportal-hilfe@gv.hamburg.de",
+                "name": "LGVGeoportalHilfe"
+              }
+            ]
+          },
+          {
+            "type": "language"
+          }
+        ]
+      ]
+    },
+    "secondaryMenu": {
+      "expanded": false,
+      "sections": [
+        [
+          {
+            "delete": true,
+            "update": true,
+            "multiUpdate": [
+              {
+                "layerId": "lgvpoint",
+                "available": true,
+                "configAttributes": ["name"],
+                "controlAttributes": ["gemeinde"]
+              }
+            ],
+            "type": "wfst",
+            "name": "WFS-T Tool",
+            "layerIds": [
+              "lgvpolygon",
+              "lgvpoint",
+              "lgvline"
+            ],
+            "toggleLayer": false,
+            "lineButton": [
+              {
+                "layerId": "lgvline",
+                "available": true
+              }
+            ],
+            "pointButton": [
+              {
+                "layerId": "lgvpoint",
+                "available": true
+              }
+            ],
+            "polygonButton": [
+              {
+                "layerId": "lgvpolygon",
+                "available": true
+              }
+            ]
+          },
+          {
+            "type": "legend"
+          },
+          {
+            "type": "scaleSwitcher"
+          },
+          {
+            "type": "shareView"
+          },
+          {
+            "type": "measure"
+          },
+          {
+            "type": "coordToolkit",
+            "heightLayerId": "19173",
+            "heightElementName": "value_0",
+            "heightValueWater": "-20",
+            "heightValueBuilding": "200",
+            "zoomLevel": 5
+          },
+          {
+            "type": "bufferAnalysis"
+          },
+          {
+            "type": "layerSlider",
+            "layerIds": [
+              {
+                "title": "common:modules.layerSlider.serviceOne",
+                "layerId": "19173"
+              },
+              {
+                "title": "common:modules.layerSlider.serviceTwo",
+                "layerId": "2426"
+              },
+              {
+                "title": "common:modules.layerSlider.serviceThree",
+                "layerId": "8712.2"
+              },
+              {
+                "title": "common:modules.layerSlider.serviceFour",
+                "layerId": "1711"
+              }
+            ]
+          },
+          {
+            "type": "layerClusterToggler",
+            "layerIdList": [
+              "8712.1",
+              "8712.2",
+              "8712.3",
+              "8712.4"
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "layerConfig": {
+    "baselayer": {
+      "elements": [
+      ]
+    },
+    "subjectlayer": {
+      "elements": [
+      {
+        "id": "dop20",
+        "name": "DOP20 Orthophoto Bayern",
+        "typ": "WMS",
+        "url": "https://geoservices.bayern.de/od/wms/dop/v1/dop20?",
+        "layers": ["by_dop20c"],
+        "format": "image/png",
+        "styles": [""],
+        "transparent": false,
+        "opacity": 1.0,
+        "visible": true,
+        "showInLayerTree": true
+      }
+      ]
+    }
+  }
+}

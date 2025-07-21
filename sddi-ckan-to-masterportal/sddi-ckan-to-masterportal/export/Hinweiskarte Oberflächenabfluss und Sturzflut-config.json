@@ -1,0 +1,15 @@
+{
+  "id": "Hinweiskarte Oberflächenabfluss und Sturzflut",
+  "name": "",
+  "typ": "WMS",
+  "url": "https://www.lfu.bayern.de/gdi/wms/wasser/oberflaechenabfluss?",
+  "layers": [],
+  "format": "image/png",
+  "styles": [
+    ""
+  ],
+  "transparent": false,
+  "opacity": 1.0,
+  "visible": true,
+  "showInLayerTree": true
+}

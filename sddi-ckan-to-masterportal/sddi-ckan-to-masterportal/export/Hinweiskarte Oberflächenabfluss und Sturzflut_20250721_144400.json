@@ -1,0 +1,102 @@
+{
+  "author": "[{\"author_email\": \"\", \"author_name\": \"Marija Knezevic\"}]",
+  "author_email": null,
+  "creator_user_id": "60cc5c19-1462-4812-8c03-19c6770626cd",
+  "id": "a836e394-a7c6-453c-ac5a-b97fa4ae8bd7",
+  "isopen": false,
+  "language": "",
+  "licence_agreement": [
+    "licence_agreement_check"
+  ],
+  "license_id": "notspecified",
+  "license_title": "License Not Specified",
+  "maintainer": "[]",
+  "maintainer_email": null,
+  "metadata_created": "2025-07-18T13:11:12.911431",
+  "metadata_modified": "2025-07-18T13:15:31.132376",
+  "name": "hinweiskarte-oberflachenabfluss-und-sturzflut",
+  "notes": "Hinweiskarte Oberflächenabfluss und Sturzflut\r\n",
+  "num_resources": 1,
+  "num_tags": 1,
+  "organization": {
+    "id": "a57161c1-2c06-4c19-a9dd-601f0c75ad0b",
+    "name": "bayerische-landesanstalt-wald-forstwirtschaft",
+    "title": "Bayerische Landesanstalt für Wald und Forstwirtschaft (LWF)",
+    "type": "organization",
+    "description": "",
+    "image_url": "http://localhost:5000/base/images/organisation_icons/logo-lwf.png",
+    "created": "2025-05-13T10:13:57.502604",
+    "is_organization": true,
+    "approval_status": "approved",
+    "state": "active"
+  },
+  "owner_org": "a57161c1-2c06-4c19-a9dd-601f0c75ad0b",
+  "private": false,
+  "spatial": "",
+  "state": "active",
+  "title": "Hinweiskarte Oberflächenabfluss und Sturzflut",
+  "type": "dataset",
+  "url": null,
+  "version": "",
+  "extras": [
+    {
+      "key": "Layer name = ",
+      "value": "senken_aufstau"
+    }
+  ],
+  "groups": [
+    {
+      "description": "",
+      "display_name": "Online-Dienst",
+      "id": "ca9e8f8f-b541-45a7-b446-e49d75898097",
+      "image_display_url": "http://localhost:5000/base/images/group_icons/online_service.png",
+      "name": "online-service",
+      "title": "Online-Dienst"
+    }
+  ],
+  "resources": [
+    {
+      "allowed_users": "",
+      "cache_last_updated": null,
+      "cache_url": null,
+      "created": "2025-07-18T13:12:48.807383",
+      "datastore_active": false,
+      "description": "Layer name = senken_aufstau\r\n",
+      "format": "WMS",
+      "hash": "",
+      "id": "3c82f7f3-c2bc-40dd-a65d-22ccd804f1af",
+      "last_modified": null,
+      "metadata_modified": "2025-07-18T13:13:00.006474",
+      "mimetype": null,
+      "mimetype_inner": null,
+      "name": "",
+      "package_id": "a836e394-a7c6-453c-ac5a-b97fa4ae8bd7",
+      "position": 0,
+      "resource_type": null,
+      "restricted_level": "public",
+      "size": null,
+      "state": "active",
+      "tracking_summary": {
+        "total": 0,
+        "recent": 0
+      },
+      "url": "https://www.lfu.bayern.de/gdi/wms/wasser/oberflaechenabfluss?",
+      "url_type": ""
+    }
+  ],
+  "tags": [
+    {
+      "display_name": "karte",
+      "id": "6dd23df2-0157-4a1b-ab3e-b3922c756619",
+      "name": "karte",
+      "state": "active",
+      "vocabulary_id": null
+    }
+  ],
+  "relationships_as_subject": [],
+  "relationships_as_object": [],
+  "tracking_summary": {
+    "total": 0,
+    "recent": 0
+  }
+}
