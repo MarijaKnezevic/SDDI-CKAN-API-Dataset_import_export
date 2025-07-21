@@ -4,6 +4,7 @@ import json
 import re
 import sys
 from datetime import datetime
+import subprocess
 
 # === Utility Functions ===
 
@@ -213,6 +214,15 @@ def main():
         print("\n✅ Masterportal files updated successfully.")
     except Exception as e:
         print(f"\n❌ Failed to save updated files: {e}")
+
+    launch_preview = input("\n🌐 Launch local Masterportal preview? (yes/no): ").strip().lower()
+    if launch_preview == "yes":
+        os.chdir(os.path.join("..", "examples", "Basic"))
+        print("🚀 Starting local HTTP server at http://localhost:8000")
+        try:
+            subprocess.run(["python", "-m", "http.server", "8000"])
+        except Exception as e:
+            print(f"❌ Failed to start server: {e}")
 
 if __name__ == "__main__":
     main()

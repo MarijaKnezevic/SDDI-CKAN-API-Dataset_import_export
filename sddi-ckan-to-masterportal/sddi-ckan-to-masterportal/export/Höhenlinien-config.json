@@ -1,0 +1,17 @@
+{
+  "id": "Höhenlinien",
+  "name": "Höhenlinien",
+  "typ": "WMS",
+  "url": "https://geoservices.bayern.de/od/wms/dgm/v1/hl?",
+  "layers": [
+    "by_hl_b"
+  ],
+  "format": "image/png",
+  "styles": [
+    ""
+  ],
+  "transparent": false,
+  "opacity": 1.0,
+  "visible": true,
+  "showInLayerTree": true
+}

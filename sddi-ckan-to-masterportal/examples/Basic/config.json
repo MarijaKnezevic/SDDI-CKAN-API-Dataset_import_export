@@ -9,8 +9,16 @@
       },
       "mapView": {
         "backgroundImage": "./resources/img/backgroundCanvas.jpeg",
-        "startCenter": [690000, 5330000],
-        "extent": [660000, 5305000, 720000, 5350000],
+        "startCenter": [
+          690000,
+          5330000
+        ],
+        "extent": [
+          660000,
+          5305000,
+          720000,
+          5350000
+        ],
         "startZoomLevel": 8
       }
     },
@@ -110,8 +118,12 @@
               {
                 "layerId": "lgvpoint",
                 "available": true,
-                "configAttributes": ["name"],
-                "controlAttributes": ["gemeinde"]
+                "configAttributes": [
+                  "name"
+                ],
+                "controlAttributes": [
+                  "gemeinde"
+                ]
               }
             ],
             "type": "wfst",
@@ -200,24 +212,42 @@
   },
   "layerConfig": {
     "baselayer": {
-      "elements": [
-      ]
+      "elements": []
     },
     "subjectlayer": {
       "elements": [
-      {
-        "id": "dop20",
-        "name": "DOP20 Orthophoto Bayern",
-        "typ": "WMS",
-        "url": "https://geoservices.bayern.de/od/wms/dop/v1/dop20?",
-        "layers": ["by_dop20c"],
-        "format": "image/png",
-        "styles": [""],
-        "transparent": false,
-        "opacity": 1.0,
-        "visible": true,
-        "showInLayerTree": true
-      }
+        {
+          "id": "dop20",
+          "name": "DOP20 Orthophoto Bayern",
+          "typ": "WMS",
+          "url": "https://geoservices.bayern.de/od/wms/dop/v1/dop20?",
+          "layers": [
+            "by_dop20c"
+          ],
+          "format": "image/png",
+          "styles": [
+            ""
+          ],
+          "transparent": false,
+          "opacity": 1.0,
+          "visible": true,
+          "showInLayerTree": true
+        },
+        {
+          "id": "Hinweiskarte Oberflächenabfluss und Sturzflut",
+          "name": "",
+          "typ": "WMS",
+          "url": "https://www.lfu.bayern.de/gdi/wms/wasser/oberflaechenabfluss?",
+          "layers": [],
+          "format": "image/png",
+          "styles": [
+            ""
+          ],
+          "transparent": false,
+          "opacity": 1.0,
+          "visible": true,
+          "showInLayerTree": true
+        }
       ]
     }
   }

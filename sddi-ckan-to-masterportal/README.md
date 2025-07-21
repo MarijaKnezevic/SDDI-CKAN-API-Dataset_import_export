@@ -34,12 +34,9 @@ This tool helps you **automatically export WMS datasets from a SDDI CKAN catalog
     *e.g., 1,2,5*
     - `Select which files to import into Masterportal`
     *e.g., 1,2,5*
-
-4. Navigate to the local clone of Masterportal folder:
-`cd SDDI-CKAN-API-Dataset_import_export\sddi-ckan-to-masterportal\examples>`
-5. To preview your Masterportal instance in a browser, navigate to the examples/Basic folder and start a local HTTP server:
-`python -m http.server 8000`
-6. The locally running instance runs hier: `http://localhost:8000/Basic/index.html`
+    - `🌐 Launch local Masterportal preview? (yes/no):`
+    *e.g., yes*
+    `🚀 Starting local HTTP server at http://localhost:8000`
 
 *Note:* This tool is currently configured for the Munich region and already includes the [DOP20](https://geodatenonline.bayern.de/geodatenonline/seiten/wms_dop20cm) dataset in the Masterportal setup.
 
