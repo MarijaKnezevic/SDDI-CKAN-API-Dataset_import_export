@@ -7,7 +7,6 @@ from datetime import datetime
 import subprocess
 import webbrowser
 
-# === Utility Functions ===
 
 def clean_filename(name):
     return re.sub(r'[\\/*?:"<>|]', '_', name)
@@ -26,6 +25,7 @@ def append_if_not_exists(entry, target_list, key='id'):
         return True
     return False
 
+# Prompt to select datasets to export
 def select_datasets(datasets):
     print("\n📚 Available datasets:")
     for i, ds in enumerate(datasets, 1):
@@ -42,17 +42,18 @@ def select_datasets(datasets):
         sys.exit()
 
 def main():
-    # === Input ===
+    # Catalog URL Definition
     catalog_url = input("Enter the CKAN catalog URL to export from: ").strip()
     catalog_name = catalog_url.split('//')[1].split('/')[0].replace('.', '_')
     api_url = f"{catalog_url}/api/3/action/package_search"
     params = {'q': '*:*', 'start': 0, 'rows': 1000}
 
+    # Setup export directory and timestamp==
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     export_folder = 'export'
     os.makedirs(export_folder, exist_ok=True)
 
-    # === Fetch Datasets ===
+    # Fetch Datasets
     print("🔄 Fetching dataset list...")
     response = requests.get(api_url, params=params)
     if response.status_code != 200:
@@ -70,6 +71,7 @@ def main():
     datasets_exported = 0
 
     for ds in selected_datasets:
+        # Prepare dataset file name and export
         title = ds.get('title', 'unknown_title')
         base_name = clean_filename(title)
         dataset_filename = f"{base_name}_{timestamp}.json"
@@ -77,14 +79,14 @@ def main():
         save_json(dataset_path, ds)
         print(f"✅ Exported dataset: {dataset_filename}")
 
-        # === Extract WMS info ===
+        # Extract WMS info
         try:
             resource = ds['resources'][0]
         except (KeyError, IndexError):
             print(f"⚠️ Skipped '{title}' — no valid resources.")
             continue
 
-        # === Extract WMS info from 'extras' ===
+        # Extract WMS info from 'extras'
         def extract_from_extras(ds, key):
             for item in ds.get("extras", []):
                 if item.get("key") == key:
@@ -95,16 +97,16 @@ def main():
         layer_name = resource.get("name", title)
         url_val = resource.get("url", "")
 
-        version = "1.3.0"  # Still hardcoded unless you store in extras
+        version = "1.3.0"
         format_type = extract_from_extras(ds, "format") or "image/png"
         layers_str = extract_from_extras(ds, "layers")
         layers = [l.strip() for l in layers_str.split(',')] if layers_str else []
 
-        # Now define variables used below
         layer_id = base_name
         layer_name = resource.get("name", title)
         url_val = resource.get("url", "")
 
+    # Prepare Masterportal service and config entries
         service_entry = {
         "id": layer_id,
         "name": layer_name,
@@ -135,7 +137,7 @@ def main():
             "showInLayerTree": True
         }
 
-        # === Save config/service files ===
+        # Save config/service files
         config_file = os.path.join(export_folder, f"{base_name}-config.json")
         service_file = os.path.join(export_folder, f"{base_name}-service.json")
         save_json(config_file, config_entry)
@@ -147,7 +149,7 @@ def main():
 
     print(f"\n🎉 Done! Exported {datasets_exported} dataset(s) to folder: {export_folder}/")
 
-    # === Select files to import ===
+    # Prompt which files to import into Masterportal
     print("\n📥 Select datasets to import into Masterportal:")
     all_files = os.listdir(export_folder)
     base_names = set()
@@ -170,7 +172,7 @@ def main():
         print(f"❌ Invalid selection: {e}")
         return
 
-    # === Load Masterportal config/service files ===
+    # Load Masterportal config/service files
     mp_config_path = os.path.join("..", "examples", "Basic", "config.json")
     mp_services_path = os.path.join("..", "examples", "Basic", "resources", "services.json")
 
@@ -189,7 +191,7 @@ def main():
         print(f"\n❌ Error reading Masterportal services.json: {e}")
         return
 
-    # === Import selected files ===
+    # Import selected files
     print("\n🛠️ Importing into Masterportal...")
 
     for base_name in selected_base_names:
@@ -220,7 +222,7 @@ def main():
         else:
             print(f"⚠️ Skipped '{service_entry['id']}' (already in services.json)")
 
-    # === Save updated Masterportal files ===
+    # Save updated Masterportal files
     try:
         save_json(mp_config_path, mp_config)
         save_json(mp_services_path, mp_services)
@@ -228,7 +230,7 @@ def main():
     except Exception as e:
         print(f"\n❌ Failed to save updated files: {e}")
 
-    # === Always launch local preview without asking ===
+    # Always launch local HTTP server with browser
     try:
         print("\n🌐 Launching local Masterportal preview...")
         examples_path = os.path.abspath(os.path.join("..", "examples"))
