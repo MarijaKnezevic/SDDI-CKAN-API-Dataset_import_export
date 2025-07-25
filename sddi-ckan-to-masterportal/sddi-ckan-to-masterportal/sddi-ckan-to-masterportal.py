@@ -98,7 +98,7 @@ def main():
         url_val = resource.get("url", "")
 
         version = "1.3.0"
-        format_type = extract_from_extras(ds, "format") or "image/png"
+        format_type = extract_from_extras(ds, "format")
         layers_str = extract_from_extras(ds, "layers")
         layers = [l.strip() for l in layers_str.split(',')] if layers_str else []
 
@@ -116,7 +116,7 @@ def main():
         "version": version,
         "gfiAttributes": "showAll",
         "gfiTheme": "default",
-        "layerAttribution": "© Bayerische Vermessungsverwaltung",
+        "layerAttribution": "",
         "legendURL": "",
         "transparent": True,
         "format": format_type,
