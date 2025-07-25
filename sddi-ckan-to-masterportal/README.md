@@ -20,7 +20,6 @@ This tool helps you **automatically export WMS datasets from a SDDI CKAN catalog
 - ✅ Exports datasets into structured JSON files
 - ✅ Generates `*-config.json` and `*-service.json` files
 - ✅ Imports selected files directly into Masterportal
-- ✅ Prevents duplicates in Masterportal configuration
 
 ## ⚙️ How to Use
 1. Navigate to your project folder:
