@@ -228,19 +228,17 @@ def main():
     except Exception as e:
         print(f"\n❌ Failed to save updated files: {e}")
 
-    launch_preview = input("\n🌐 Launch local Masterportal preview? (yes/no): ").strip().lower()
-    if launch_preview == "yes":
-        try:
-            # Navigate to Masterportal 'examples' directory
-            examples_path = os.path.abspath(os.path.join("..", "examples"))
-            os.chdir(examples_path)
-            print("🚀 Starting local HTTP server in:", examples_path)
-            print("🌍 Preview URL: http://localhost:8000/Basic/index.html")
-            webbrowser.open("http://localhost:8000/Basic/index.html")         # Open in default browser
-            subprocess.run(["python", "-m", "http.server", "8000"])
-
-        except Exception as e:
-            print(f"❌ Failed to start server: {e}")
+    # === Always launch local preview without asking ===
+    try:
+        print("\n🌐 Launching local Masterportal preview...")
+        examples_path = os.path.abspath(os.path.join("..", "examples"))
+        os.chdir(examples_path)
+        print("🚀 Starting local HTTP server in:", examples_path)
+        print("🌍 Preview URL: http://localhost:8000/Basic/index.html")
+        webbrowser.open("http://localhost:8000/Basic/index.html")
+        subprocess.run(["python", "-m", "http.server", "8000"])
+    except Exception as e:
+        print(f"❌ Failed to start server: {e}")
 
 if __name__ == "__main__":
     main()
