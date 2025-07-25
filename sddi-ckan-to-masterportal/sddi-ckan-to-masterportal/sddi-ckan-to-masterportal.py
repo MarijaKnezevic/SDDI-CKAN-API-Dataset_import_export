@@ -84,34 +84,41 @@ def main():
             print(f"⚠️ Skipped '{title}' — no valid resources.")
             continue
 
-        description_lines = resource.get('description', '').splitlines()
-        layers = []
-        version = "1.3.0"
-        for line in description_lines:
-            if line.lower().startswith("layers"):
-                layers = [l.strip() for l in line.split('=')[1].split(',')]
-            elif line.lower().startswith("version"):
-                version = line.split('=')[1].strip()
+        # === Extract WMS info from 'extras' ===
+        def extract_from_extras(ds, key):
+            for item in ds.get("extras", []):
+                if item.get("key") == key:
+                    return item.get("value", "")
+            return ""
 
         layer_id = base_name
         layer_name = resource.get("name", title)
         url_val = resource.get("url", "")
-        format_type = "image/png"
+
+        version = "1.3.0"  # Still hardcoded unless you store in extras
+        format_type = extract_from_extras(ds, "format") or "image/png"
+        layers_str = extract_from_extras(ds, "layers")
+        layers = [l.strip() for l in layers_str.split(',')] if layers_str else []
+
+        # Now define variables used below
+        layer_id = base_name
+        layer_name = resource.get("name", title)
+        url_val = resource.get("url", "")
 
         service_entry = {
-            "id": layer_id,
-            "name": layer_name,
-            "url": url_val,
-            "typ": "WMS",
-            "layers": layers,
-            "version": version,
-            "gfiAttributes": "showAll",
-            "gfiTheme": "default",
-            "layerAttribution": "© Bayerische Vermessungsverwaltung",
-            "legendURL": "",
-            "transparent": True,
-            "format": format_type,
-            "urlIsVisible": True
+        "id": layer_id,
+        "name": layer_name,
+        "url": url_val,
+        "typ": "WMS",
+        "layers": layers,
+        "version": version,
+        "gfiAttributes": "showAll",
+        "gfiTheme": "default",
+        "layerAttribution": "© Bayerische Vermessungsverwaltung",
+        "legendURL": "",
+        "transparent": True,
+        "format": format_type,
+        "urlIsVisible": True
         }
 
         config_entry = {
